@@ -1,0 +1,14 @@
+td{
+    text-align: left;
+    border-bottom: #ccc;
+}
+.edit-icon{
+    cursor: pointer;
+    color: blue;
+    margin: 0 3px;
+}
+.delete-icon{
+    cursor: pointer;
+    color: red;
+    margin: 0 3px;
+}
