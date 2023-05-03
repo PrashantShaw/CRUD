@@ -19,18 +19,16 @@ const Home = () => {
         member.name.toLowerCase().includes(searchText) ||
         member.email.toLowerCase().includes(searchText) ||
         member.role.toLowerCase().includes(searchText)
-
       )
-    }, [searchText, members])
-
-  })
+    })
+  }, [searchText, members])
 
   // ADD PAGINATION
   const membersToShow = useMemo(() => {
     return filteredMembers.slice(
       (pageNo * 10), (pageNo * 10 + 10)
     )
-  }, [pageNo, members, searchText])
+  }, [pageNo, filteredMembers])
 
   // HANDLE SINGLE DELETE
   const handleDelete = (id) => {
@@ -40,7 +38,7 @@ const Home = () => {
 
   // HANDLE PAGE CHANGE
   const increasePgCount = () => {
-    if (pageNo < ~~((membersData.length - 1) / 10)) {
+    if (pageNo < ~~((members.length - 1) / 10)) {
       setPageNo(prev => prev + 1)
     }
   }
